@@ -1,0 +1,2 @@
+import{f as o}from"./assets/refs-15b185ee.js";import{i as s}from"./assets/vendor-77e16229.js";o.addEventListener("submit",e=>{e.preventDefault();const t=e.currentTarget.delay.value;e.currentTarget.state.value==="fulfilled"?s.show({message:`✅ Fulfilled promise in ${t} ms`,color:"aqua",position:"topRight",messageColor:"green",messageSize:"20",timeout:3e3}):s.show({message:`❌ Rejected promise in ${t} ms`,color:"blue",position:"topRight",messageColor:"red",messageSize:"20",timeout:3e3})});
+//# sourceMappingURL=commonHelpers2.js.map
