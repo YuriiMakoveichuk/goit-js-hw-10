@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(250, 250, 200);
+}
+
+.home-list {
+    text-align: left;
+}
+
+.form {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: blue;
+}
+
+.form-input-delay {
+    display: flex;
+    flex-direction: column;
+    padding: 0 35px;
+}
+
+.form-input-delay input {
+    height: 30px;
+}
+
+fieldset {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    color: inherit;
+    transition: border 250ms linear, background-color 250ms linear;
+}
+
+button:hover,
+button:focus {
+    border: 1px solid blueviolet;
+    background-color: aquamarine;
+}
