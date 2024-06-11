@@ -3,12 +3,29 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 
-formEl.addEventListener('submit', (event) => {
+
+
+
+formEl.addEventListener('submit', creatPromise)
+
+function creatPromise(event) {
     event.preventDefault();
-    const delayImput = event.currentTarget.delay.value;
+    const delayImput = Number(event.currentTarget.delay.value);
     const stateInput = event.currentTarget.state.value;
- 
-    if (stateInput === 'fulfilled') {
+    
+
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (stateInput === "fulfilled") {
+                resolve(delayImput);
+        
+            } else {
+                reject(delayImput)
+            }
+        }, delayImput);
+    });
+
+    promise.then((delayImput) => {
         iziToast.show({
             message: `✅ Fulfilled promise in ${delayImput} ms`,
             color: 'aqua',
@@ -16,8 +33,8 @@ formEl.addEventListener('submit', (event) => {
             messageColor: 'green',
             messageSize: '20',
             timeout: 3000,
-});
-    } else {
+        });
+    }).catch((delayImput) => {
         iziToast.show({
             message: `❌ Rejected promise in ${delayImput} ms`,
             color: 'blue',
@@ -25,6 +42,9 @@ formEl.addEventListener('submit', (event) => {
             messageColor: 'red',
             messageSize: '20',
             timeout: 3000,
-});
-    }
-})
+        });
+    });
+};
+
+
+    
